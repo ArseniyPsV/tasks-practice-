@@ -1,0 +1,25 @@
+const http = require('http');
+
+// Список анекдотов/шуток
+const jokes = [
+    "— Доктор, у меня амнезия! — Сколько уже? — Сколько уже что?",
+    "Программист заходит в бар, заказывает 1 пиво, потом 10 пив, потом -1 пиво...",
+    "— Почему программисты путают Хэллоуин и Рождество? — Потому что Oct 31 = Dec 25."
+];
+
+// Выбор случайного анекдота
+function getRandomJoke() {
+    return jokes[Math.floor(Math.random() * jokes.length)];
+}
+
+// Порт = год рождения (пример: 1995)
+const PORT = 1995;
+
+const server = http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
+    res.end(`<h1>${getRandomJoke()}</h1>`);
+});
+
+server.listen(PORT, () => {
+    console.log(`Сервер запущен: http://localhost:${PORT}`);
+});
