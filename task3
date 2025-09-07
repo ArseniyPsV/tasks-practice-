@@ -1,0 +1,20 @@
+const height = Math.floor(Math.random() * 3) + 2; // 2–4 м
+const length = Math.floor(Math.random() * 6) + 4; // 4–9 м
+const width = Math.floor(Math.random() * 6) + 3;  // 3–8 м
+
+console.log(`Высота: ${height} м`);
+console.log(`Длина: ${length} м`);
+console.log(`Ширина: ${width} м`);
+
+const wallArea = 2 * (length * height) + 2 * (width * height);
+console.log(`Площадь стен: ${wallArea} м²`);
+
+const volume = length * width * height;
+console.log(`Объём комнаты: ${volume} м³`);
+
+const peopleCount = Math.floor(Math.random() * 5) + 1; 
+const personVolume = 0.07; 
+const volumeWithPeople = volume - peopleCount * personVolume;
+
+console.log(`В комнате ${peopleCount} человек(а)`);
+console.log(`Объём с учётом людей: ${volumeWithPeople.toFixed(2)} м³`);
